@@ -1,0 +1,21 @@
+/**
+ * @author caias
+ */
+
+// dependencies
+import { resolve } from 'path';
+
+// root
+export const ROOT_PATH = resolve(__dirname, '../../');
+
+// src folder
+export const SRC_PATH = resolve(ROOT_PATH, 'src');
+
+// setting related build
+export const BUILD = {
+  BUILD_PATH: resolve(ROOT_PATH, 'dist'),
+  FILENAME_SUFFIX: '.bundle.js',
+};
+
+// development env check
+export const IS_DEV = process.env.NODE_ENV === 'development';
