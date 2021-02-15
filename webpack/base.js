@@ -1,12 +1,18 @@
 /**
  * @author caias
  */
+import { BUILD, ENTRY_PATH } from './config/env';
+import { JSRULE, TSRULE } from './config/rules';
+import esLint from './config/plugin';
+import entryLoader from './utils/entryLoader';
 
-import { BUILD } from './config/env';
-import { JSRULE } from './config/rules';
+const entries = entryLoader(ENTRY_PATH, '**/*.ts');
 
 export default {
-  entry: './src/index.js',
+  entry: entries,
+  resolve: {
+    extensions: ['.js', '.ts', '.tsx'],
+  },
   output: {
     filename: 'main.js',
     path: BUILD.BUILD_PATH,
@@ -15,6 +21,10 @@ export default {
   module: {
     rules: [
       JSRULE,
-    ]
+      TSRULE,
+    ],
   },
+  plugins: [
+    esLint,
+  ],
 };

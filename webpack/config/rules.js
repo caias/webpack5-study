@@ -13,8 +13,20 @@ const babelLoader = {
   },
 };
 
+// javascript webpack rules
 export const JSRULE = {
   test: /\.(js|jsx)$/,
   use: [babelLoader],
+  exclude: /node_modules/,
+};
+
+// typescript webpack rules
+export const TSRULE = {
+  test: /\.(ts|tsx)?$/,
+  loader: 'ts-loader',
+  options: {
+    transpileOnly: true,
+    experimentalWatchApi: true,
+  },
   exclude: /node_modules/,
 };
