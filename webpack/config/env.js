@@ -11,6 +11,9 @@ export const ROOT_PATH = resolve(__dirname, '../../');
 // src folder
 export const SRC_PATH = resolve(ROOT_PATH, 'src');
 
+// entry file folder
+export const ENTRY_PATH = resolve(SRC_PATH, 'entries');
+
 // setting related build
 export const BUILD = {
   BUILD_PATH: resolve(ROOT_PATH, 'dist'),
