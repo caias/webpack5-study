@@ -1,3 +1,5 @@
+import { resolve } from 'path';
+
 module.exports = {
   'parser': '@typescript-eslint/parser',
   'plugins': [
@@ -17,6 +19,8 @@ module.exports = {
     'node': true,
   },
   'parserOptions': {
+    'project': resolve(__dirname, './tsconfig.json'),
+    'tsconfigRootDir': __dirname,
     'ecmaVersion': 9,
     'sourceType': 'module',
     'ecmaFeatures': {
