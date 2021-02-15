@@ -3,14 +3,16 @@
  */
 import { BUILD, ENTRY_PATH } from './config/env';
 import { JSRULE, TSRULE } from './config/rules';
-import esLint from './config/plugin';
+import devServer from './config/devServer';
+import { esLintPlugin, htmlWebpackPlugin } from './config/plugins';
 import entryLoader from './utils/entryLoader';
 
-const entries = entryLoader(ENTRY_PATH, '**/*.ts');
+const entries = entryLoader(ENTRY_PATH, '**/*.tsx');
 
 export default {
   entry: entries,
   resolve: {
+    modules: ['node_modules'],
     extensions: ['.js', '.ts', '.tsx'],
   },
   output: {
@@ -25,6 +27,8 @@ export default {
     ],
   },
   plugins: [
-    esLint,
+    esLintPlugin,
+    htmlWebpackPlugin,
   ],
+  devServer,
 };
