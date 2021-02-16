@@ -22,7 +22,7 @@ function production() {
       minimizer: [new TerserPlugin({
         extractComments: false,
       })],
-    }
+    },
   });
 }
 
