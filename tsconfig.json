@@ -22,11 +22,11 @@
       "esnext",
       "dom"
     ],
-    "baseUrl": ".",
+    "baseUrl": "./",
     "paths": {
-      "_js/*": [
-        "./src/*"
-      ],
+      "@components/*": [
+        "./src/components/*"
+      ]
     },
     "allowSyntheticDefaultImports": true,
     "keyofStringsOnly": true,

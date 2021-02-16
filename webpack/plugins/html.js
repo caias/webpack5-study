@@ -1,9 +1,10 @@
 /**
  * @author caias
+ * webpack html plugin
  */
 import { join } from 'path';
+import { SRC_PATH } from '../config';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import { SRC_PATH } from '../env';
 
 const config = {
   filename: 'index.html',
