@@ -1,5 +1,3 @@
-import { resolve } from 'path';
-
 module.exports = {
   'parser': '@typescript-eslint/parser',
   'plugins': [
@@ -19,8 +17,6 @@ module.exports = {
     'node': true,
   },
   'parserOptions': {
-    'project': resolve(__dirname, './tsconfig.json'),
-    'tsconfigRootDir': __dirname,
     'ecmaVersion': 9,
     'sourceType': 'module',
     'ecmaFeatures': {
@@ -42,6 +38,11 @@ module.exports = {
     'setTimeout': false,
     'window': false,
     'XMLHttpRequest': false,
+  },
+  'settings': {
+    'react': {
+      'version': 'detect',
+    },
   },
   'rules': {
     'camelcase': ['error', { 'properties': 'always' }],

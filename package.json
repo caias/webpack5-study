@@ -1,7 +1,7 @@
 {
   "name": "webpack5",
-  "version": "0.0.1",
-  "description": "webpack5 typescript sample",
+  "version": "1.0.0",
+  "description": "my template repo related webpack5 typescript react",
   "keywords": [
     "react",
     "typescript",

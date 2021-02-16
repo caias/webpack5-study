@@ -1,5 +1,6 @@
 /**
  * @author caias
+ * webpack prod config
  */
 
 // dependencies
@@ -8,11 +9,11 @@ import merge from 'webpack-merge';
 import TerserPlugin from 'terser-webpack-plugin';
 
 // modules
-import * as ENV from './config/env';
+import { BUILD } from './config';
 import baseConfig from './base';
 
 function production() {
-  rimraf(ENV.BUILD.BUILD_PATH, () => { });
+  rimraf(BUILD.BUILD_PATH, () => {});
 
   return merge(baseConfig, {
     devtool: false,
@@ -22,7 +23,7 @@ function production() {
       minimizer: [new TerserPlugin({
         extractComments: false,
       })],
-    }
+    },
   });
 }
 

@@ -1,5 +1,6 @@
 /**
  * @author caias
+ * webpack dev config
  */
 
 // dependencies
@@ -7,11 +8,12 @@ import rimraf from 'rimraf';
 import merge from 'webpack-merge';
 
 // modules
-import { BUILD } from './config/env';
+import { BUILD } from './config';
 import baseConfig from './base';
 
 function development() {
   rimraf(BUILD.BUILD_PATH, () => {});
+  
   return merge(baseConfig, {
     // webpack mode
     mode: 'development',

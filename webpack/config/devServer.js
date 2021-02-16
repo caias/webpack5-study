@@ -1,10 +1,11 @@
 /**
  * @author caias
+ * webpack dev server config set
  */
 import { join } from 'path';
 import { ROOT_PATH } from './env';
 
-const devServer = {
+export const devServer = {
   contentBase: join(ROOT_PATH, 'dist'),
   overlay: true,
   port: 8888,
@@ -22,5 +23,3 @@ const devServer = {
   historyApiFallback: true,
   hot: true,
 };
-
-export default devServer;

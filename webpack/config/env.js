@@ -1,5 +1,6 @@
 /**
  * @author caias
+ * webpack folder structure config set
  */
 
 // dependencies

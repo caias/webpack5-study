@@ -1,5 +1,6 @@
 /**
  * @author caias
+ * webpack loader rules config set
  */
 
 import { join } from 'path';
