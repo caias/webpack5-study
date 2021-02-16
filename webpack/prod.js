@@ -6,10 +6,9 @@
 // dependencies
 import rimraf from 'rimraf';
 import merge from 'webpack-merge';
-import TerserPlugin from 'terser-webpack-plugin';
 
 // modules
-import { BUILD } from './config';
+import { BUILD, optimization } from './config';
 import baseConfig from './base';
 
 function production() {
@@ -18,12 +17,10 @@ function production() {
   return merge(baseConfig, {
     devtool: false,
     mode: 'production',
-    optimization: {
-      minimize: true,
-      minimizer: [new TerserPlugin({
-        extractComments: false,
-      })],
+    output: {
+      filename: `[name]${BUILD.FILENAME_SUFFIX}`,
     },
+    optimization,
   });
 }
 
