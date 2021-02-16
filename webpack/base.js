@@ -16,8 +16,8 @@ export default {
     extensions: ['.js', '.ts', '.tsx'],
   },
   output: {
-    filename: 'main.js',
     path: CONFIG.BUILD.BUILD_PATH,
+    libraryTarget: 'umd',
   },
   mode: 'development',
   module: {
@@ -30,6 +30,5 @@ export default {
     esLintPlugin,
     htmlWebpackPlugin,
   ],
-  optimization: CONFIG.optimization,
   devServer: CONFIG.devServer,
 };

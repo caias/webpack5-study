@@ -21,9 +21,7 @@ function development() {
     devtool: 'source-map',
     // entry public path
     output: {
-      path: BUILD.BUILD_PATH,
-      filename: `[name]${BUILD.FILENAME_SUFFIX}`,
-      libraryTarget: 'umd',
+      filename: '[name].js',
     },
   });
 }

@@ -1,6 +1,6 @@
 {
   "name": "webpack5",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "my template repo related webpack5 typescript react",
   "keywords": [
     "react",
@@ -10,7 +10,8 @@
   ],
   "main": "webpack.config.babel.js",
   "scripts": {
-    "dev": "NODE_ENV=development webpack serve",
+    "start": "NODE_ENV=development webpack serve",
+    "dev": "NODE_ENV=development webpack",
     "prod": "NODE_ENV=production webpack"
   },
   "repository": "https://github.com/caias/webpack5-ts-test.git",
