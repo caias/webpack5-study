@@ -39,6 +39,11 @@ module.exports = {
     'window': false,
     'XMLHttpRequest': false,
   },
+  'settings': {
+    'react': {
+      'version': 'detect',
+    },
+  },
   'rules': {
     'camelcase': ['error', { 'properties': 'always' }],
     'comma-spacing': ['error', { 'before': false, 'after': true }],

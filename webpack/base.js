@@ -1,30 +1,34 @@
 /**
  * @author caias
+ * webpack base config
  */
-import { BUILD, ENTRY_PATH } from './config/env';
-import { JSRULE, TSRULE } from './config/rules';
-import esLint from './config/plugin';
+import * as CONFIG from './config';
+import { esLintPlugin, htmlWebpackPlugin } from './plugins';
 import entryLoader from './utils/entryLoader';
 
-const entries = entryLoader(ENTRY_PATH, '**/*.ts');
+const entries = entryLoader(CONFIG.ENTRY_PATH, '**/*.tsx');
 
 export default {
   entry: entries,
   resolve: {
+    modules: ['node_modules'],
+    alias: CONFIG.alias,
     extensions: ['.js', '.ts', '.tsx'],
   },
   output: {
-    filename: 'main.js',
-    path: BUILD.BUILD_PATH,
+    path: CONFIG.BUILD.BUILD_PATH,
+    libraryTarget: 'umd',
   },
   mode: 'development',
   module: {
     rules: [
-      JSRULE,
-      TSRULE,
+      CONFIG.JSRULE,
+      CONFIG.TSRULE,
     ],
   },
   plugins: [
-    esLint,
+    esLintPlugin,
+    htmlWebpackPlugin,
   ],
+  devServer: CONFIG.devServer,
 };

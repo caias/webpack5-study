@@ -10,8 +10,8 @@
     ],
     "types": [
       "node",
-      // "react",
-      // "react-dom",
+      "react",
+      "react-dom",
       // "react-redux",
     ],
     "module": "esnext",
@@ -22,11 +22,11 @@
       "esnext",
       "dom"
     ],
-    "baseUrl": ".",
+    "baseUrl": "./",
     "paths": {
-      "_js/*": [
-        "./src/*"
-      ],
+      "@components/*": [
+        "./src/components/*"
+      ]
     },
     "allowSyntheticDefaultImports": true,
     "keyofStringsOnly": true,

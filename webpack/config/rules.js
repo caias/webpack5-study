@@ -1,5 +1,6 @@
 /**
  * @author caias
+ * webpack loader rules config set
  */
 
 import { join } from 'path';
@@ -17,7 +18,7 @@ const babelLoader = {
 export const JSRULE = {
   test: /\.(js|jsx)$/,
   use: [babelLoader],
-  exclude: /node_modules/,
+  exclude: /(node_modules|dist)/,
 };
 
 // typescript webpack rules
@@ -28,5 +29,5 @@ export const TSRULE = {
     transpileOnly: true,
     experimentalWatchApi: true,
   },
-  exclude: /node_modules/,
+  exclude: /(node_modules|dist)/,
 };
